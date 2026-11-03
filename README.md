@@ -6,13 +6,11 @@ Ouvre `index.html` dans ton navigateur (double-clic) pour voir le site. Aucun ou
 |--------------------------------------|--------------------------------------------|
 | Version anglaise                     | `index.html`                               |
 | Version française                    | `fr/index.html`                            |
-| Pages vidéo                          | `videos/*.html` (une par langue)           |
 | Couleurs, police, mise en page       | `assets/css/style.css`                     |
 | Photo                                | `assets/img/` (puis changer `src` du `<img class="photo">`) |
 
 - **Ajouter une publication / un événement** : copie un bloc `<li>…</li>` existant dans la bonne section.
-- **Nouvelle page vidéo** : copie `videos/example-paper.html`, remplace `VIDEO_ID` (ID YouTube après `v=`),
-  puis ajoute le lien `<a href="videos/<nom>.html">Video</a>` dans la publication.
+- **Pages vidéo** : à créer plus tard dans `videos/` (une page par langue), avec un lien depuis la publication.
 - Le fichier `.nojekyll` dit à GitHub de publier les fichiers tels quels.
 
 ## Mise en ligne
