@@ -74,7 +74,8 @@ h2 {
 /* Événements */
 .events { list-style: none; padding: 0; margin: 0; }
 .events li { display: flex; gap: 16px; margin-bottom: 10px; }
-.events .date { flex: 0 0 90px; color: var(--muted); font-size: 0.95rem; }
+.events .ev-detail { font-size: 0.95rem; }
+.events .date { flex: 0 0 110px; color: var(--muted); font-size: 0.95rem; }
 
 /* Pages vidéo */
 .video { position: relative; aspect-ratio: 16 / 9; margin: 24px 0; }
@@ -90,4 +91,5 @@ footer {
 
 @media (max-width: 520px) {
   .events li { flex-direction: column; gap: 0; }
+  .events .date { flex-basis: auto; }
 }
