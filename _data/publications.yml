@@ -1,0 +1,42 @@
+# ------------------------------------------------------------------
+# Publications
+#   spotlight: true   -> affichée dans « Publications à la une »
+#   lang: [en, fr]    -> versions où elle apparaît (défaut : les deux)
+#   note_en / note_fr -> petite phrase optionnelle propre à chaque langue
+#   video_en / video_fr -> lien vers la page vidéo (dans _videos/)
+# Les entrées ci-dessous sont des EXEMPLES à remplacer.
+# ------------------------------------------------------------------
+
+- title: "Title of your flagship paper"
+  authors: "G. L., Co-author A., Co-author B."
+  venue: "Journal / Conference"
+  year: 2026
+  spotlight: true
+  note_en: "One sentence explaining why this work matters."
+  note_fr: "Une phrase qui explique l'intérêt de ce travail."
+  links:
+    paper: "https://arxiv.org/abs/0000.00000"
+    code: "https://github.com/"
+  video_en: /videos/example-paper/
+  video_fr: /videos/example-paper-fr/
+
+- title: "Second highlighted paper"
+  authors: "G. L., Co-author C."
+  venue: "Preprint"
+  year: 2026
+  spotlight: true
+  links:
+    paper: "https://arxiv.org/abs/0000.00000"
+
+- title: "Another publication"
+  authors: "Co-author D., G. L."
+  venue: "Workshop"
+  year: 2025
+  links:
+    paper: "https://arxiv.org/abs/0000.00000"
+
+- title: "Article de vulgarisation (visible uniquement en français)"
+  authors: "G. L."
+  venue: "Revue"
+  year: 2025
+  lang: [fr]

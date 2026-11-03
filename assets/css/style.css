@@ -1,0 +1,93 @@
+:root {
+  --text: #1a1a1a;
+  --muted: #666;
+  --accent: #1f4e8c;
+  --rule: #e5e5e5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px 48px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.lang-switch {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 20px 0;
+  text-align: right;
+  font-size: 0.9rem;
+  font-family: system-ui, sans-serif;
+}
+
+/* En-tête : photo centrée */
+.hero { text-align: center; padding: 24px 0 8px; }
+.photo {
+  width: 170px; height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 16px;
+}
+.hero h1 { margin: 0; font-size: 2rem; font-weight: normal; }
+.subtitle { margin: 4px 0; color: var(--muted); }
+.contact { margin: 8px 0 0; font-family: system-ui, sans-serif; font-size: 0.95rem; }
+.contact span { color: var(--muted); margin: 0 6px; }
+
+section { margin-top: 40px; }
+h2 {
+  font-size: 1.15rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 6px;
+}
+
+.muted { color: var(--muted); }
+
+/* Publications */
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs li { margin-bottom: 18px; }
+.pub-title { font-weight: bold; }
+.spotlight li { padding-left: 14px; border-left: 3px solid var(--accent); }
+.note { font-style: italic; }
+.links { font-family: system-ui, sans-serif; font-size: 0.85rem; }
+.links a { margin-right: 14px; }
+.links a::before { content: "["; color: var(--muted); }
+.links a::after  { content: "]"; color: var(--muted); }
+
+/* Événements */
+.events { list-style: none; padding: 0; margin: 0; }
+.events li { display: flex; gap: 16px; margin-bottom: 10px; }
+.events .date { flex: 0 0 90px; color: var(--muted); font-size: 0.95rem; }
+
+/* Pages vidéo */
+.video { position: relative; aspect-ratio: 16 / 9; margin: 24px 0; }
+.video iframe, .video video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 24px 0 32px;
+  font-family: system-ui, sans-serif;
+}
+
+@media (max-width: 520px) {
+  .events li { flex-direction: column; gap: 0; }
+}

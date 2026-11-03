@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign home = "/" -%}{%- if lang == "fr" -%}{%- assign home = "/fr/" -%}{%- endif -%}
+
+<p><a href="{{ home | relative_url }}">{{ t.back }}</a></p>
+
+<article class="video-page">
+  <h1>{{ page.title }}</h1>
+  {%- if page.authors %}<p class="muted">{{ page.authors }}</p>{% endif %}
+
+  {%- if page.youtube %}
+  <div class="video">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ page.youtube }}"
+            title="{{ page.title }}" allowfullscreen
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
+  {%- elsif page.video_file %}
+  <div class="video">
+    <video controls preload="metadata" src="{{ page.video_file | relative_url }}"></video>
+  </div>
+  {%- endif %}
+
+  {{ content }}
+</article>

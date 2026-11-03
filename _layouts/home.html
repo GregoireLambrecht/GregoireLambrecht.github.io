@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{%- assign lang = page.lang | default: "en" -%}
+{%- assign t = site.data.i18n[lang] -%}
+
+<header class="hero">
+  <img class="photo" src="{{ site.photo | relative_url }}" alt="{{ site.title }}">
+  <h1>{{ site.title }}</h1>
+  <p class="subtitle">{{ t.role }} · {{ t.affiliation }}</p>
+  <p class="contact">
+    <a href="{{ site.linkedin }}">LinkedIn</a>
+    <span aria-hidden="true">·</span>
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+  </p>
+</header>
+
+<section>
+  <h2>{{ t.about }}</h2>
+  {{ content }}
+</section>
+
+<section>
+  <h2>{{ t.spotlight }}</h2>
+  <ul class="pubs spotlight">
+  {%- for pub in site.data.publications -%}
+    {%- if pub.spotlight -%}
+      {%- assign langs = pub.lang | default: "en,fr" | join: "," -%}
+      {%- if langs contains lang -%}{% include publication.html pub=pub lang=lang %}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  </ul>
+</section>
+
+<section>
+  <h2>{{ t.publications }}</h2>
+  <ul class="pubs">
+  {%- for pub in site.data.publications -%}
+    {%- unless pub.spotlight -%}
+      {%- assign langs = pub.lang | default: "en,fr" | join: "," -%}
+      {%- if langs contains lang -%}{% include publication.html pub=pub lang=lang %}{%- endif -%}
+    {%- endunless -%}
+  {%- endfor -%}
+  </ul>
+</section>
+
+<section>
+  <h2>{{ t.events }}</h2>
+  <ul class="events">
+  {%- for ev in site.data.events -%}
+    {%- assign langs = ev.lang | default: "en,fr" | join: "," -%}
+    {%- if langs contains lang -%}
+    {%- assign type_key = "type_" | append: lang -%}
+    <li>
+      <span class="date">{{ ev.date }}</span>
+      <span class="ev">
+        {% if ev.link %}<a href="{{ ev.link }}">{{ ev.name }}</a>{% else %}{{ ev.name }}{% endif %}
+        <span class="muted">— {{ ev.place }}{% if ev[type_key] %} · {{ ev[type_key] }}{% endif %}</span>
+      </span>
+    </li>
+    {%- endif -%}
+  {%- endfor -%}
+  </ul>
+</section>

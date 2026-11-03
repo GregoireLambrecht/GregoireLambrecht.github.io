@@ -1,0 +1,19 @@
+# ------------------------------------------------------------------
+# Conférences et événements (du plus récent au plus ancien)
+#   type_en / type_fr : "Talk", "Poster", "Attendee"… / "Exposé", "Poster", "Participant"…
+#   lang: [en, fr] pour restreindre à une version (défaut : les deux)
+# Les entrées ci-dessous sont des EXEMPLES à remplacer.
+# ------------------------------------------------------------------
+
+- name: "CEMRACS 2026"
+  place: "CIRM, Marseille, France"
+  date: "Jul. 2026"
+  type_en: "Research project"
+  type_fr: "Projet de recherche"
+
+- name: "Example Conference"
+  place: "City, Country"
+  date: "2026"
+  type_en: "Talk"
+  type_fr: "Exposé"
+  link: "https://example.org"

@@ -1,0 +1,18 @@
+{%- assign pub = include.pub -%}
+{%- assign lang = include.lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign note_key = "note_" | append: lang -%}
+{%- assign video_key = "video_" | append: lang -%}
+<li>
+  <span class="pub-title">{{ pub.title }}</span><br>
+  <span class="muted">{{ pub.authors }} — <em>{{ pub.venue }}</em>, {{ pub.year }}</span>
+  {%- if pub[note_key] %}<br><span class="note">{{ pub[note_key] }}</span>{% endif %}
+  {%- if pub.links or pub[video_key] %}
+  <br><span class="links">
+    {%- if pub.links.paper %}<a href="{{ pub.links.paper }}">{{ t.paper }}</a>{% endif %}
+    {%- if pub.links.code %}<a href="{{ pub.links.code }}">{{ t.code }}</a>{% endif %}
+    {%- if pub.links.slides %}<a href="{{ pub.links.slides }}">{{ t.slides }}</a>{% endif %}
+    {%- if pub[video_key] %}<a href="{{ pub[video_key] | relative_url }}">{{ t.video }}</a>{% endif %}
+  </span>
+  {%- endif %}
+</li>
