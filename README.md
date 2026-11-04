@@ -1,6 +1,8 @@
 # Page web personnelle — HTML simple
 
-Ouvre `index.html` dans ton navigateur (double-clic) pour voir le site. Aucun outil à installer.
+Aperçu en local : lance `python3 -m http.server` dans ce dossier, puis ouvre http://localhost:8000.
+
+Après avoir ajouté une page, ajoute-la aussi à `sitemap.xml`. Ne supprime pas le fichier `google*.html` (vérification Search Console).
 
 | Je veux changer…                     | Fichier                                    |
 |--------------------------------------|--------------------------------------------|
